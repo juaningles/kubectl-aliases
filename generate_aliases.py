@@ -64,7 +64,7 @@ def main():
         ('oyaml', '-o=yaml', ['g'], ['owide', 'ojson', 'sl']),
         ('owide', '-o=wide', ['g'], ['oyaml', 'ojson']),
         ('ojson', '-o=json', ['g'], ['owide', 'oyaml', 'sl']),
-        ('all', '--all-namespaces', ['g', 'd'], ['rm', 'f', 'no', 'sys']),
+        ('all', '--all-namespaces', ['g', 'd'], ['rm', 'f', 'no', 'ns', 'sys']),
         ('sl', '--show-labels', ['g'], ['oyaml', 'ojson'], None),
         ('all', '--all', ['rm'], None), # caution: reusing the alias
         ('w', '--watch', ['g'], ['oyaml', 'ojson', 'owide']),
@@ -91,6 +91,7 @@ def main():
         "bash": "alias {}='{}'",
         "zsh": "alias {}='{}'",
         "fish": "abbr --add {} \"{}\"",
+        "nushell": "alias {} = {}",
     }
 
     shell = sys.argv[1] if len(sys.argv) > 1 else "bash"
